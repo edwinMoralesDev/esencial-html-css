@@ -3,6 +3,9 @@
   --gray20: #212429;
   --gray10: #616161;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: var(--gray30);
   font-family: 'Roboto', sans-serif;
@@ -10,7 +13,18 @@ body {
 }
 header {
   font-size: .875rem;
-  color: var(--gray20);
+  width: 188px;
+  color: var(--gray10);
+  position: absolute;
+  top: 64px;
+  left: -232px;
+}
+.header {
+  position: sticky;
+  top: 0;
+}
+header li {
+  margin-bottom: 16px;
 }
 header a {
   color: var(--gray10);
@@ -21,13 +35,12 @@ header a:hover {
 }
 nav details summary {
   font-weight: bold;
+  line-height: 24px;
 }
 h1 {
   font-size: 3.75rem;
+  font-weight: 400;
   margin: 64px 0 16px 0;
-}
-h1 + p {
-  margin-bottom: 64px;
 }
 hr {
   margin: 64px 0;
@@ -41,12 +54,38 @@ h3 {
   font-size: 1.5rem;
   margin: 16px 0 24px 0;
   font-weight: normal;
+  position: sticky;
+  top: 0;
+  background: white;
 }
 pre {
   background: #FEC62E;
+  font-family: 'Roboto', sans-serif;
+  padding: 40px;
+  line-height: 24px;
 }
 blockquote {
   margin: 32px 0;
+  padding-left: 16px;
+  font-size: 24px;
+  border-left: 4px solid var(--gray30);
+  line-height: 24px;
+}
+blockquote span {
+  color: var(--gray10);
+}
+blockquote span::before {
+  content: '-';
+}
+.header-content {
+  position: relative;
+}
+.wrapper {
+  width: 902px;
+  margin: auto;
+}
+.main-content {
+  background: white;
 }
 .hero {
   background: linear-gradient(to top, rgba(255, 255, 255, .3), transparent ), url(../images/pattern.png);
@@ -75,16 +114,19 @@ blockquote {
 }
 .section-content h3 {
   counter-increment: titleList;
+  padding-bottom: 8px;
 }
 .section-content h3::before {
-  content: counter(titleList, decimal);
-
+  content: counter(titleList, decimal) '. ';
 }
 .section-content h3::after {
   content: '';
-  width: 32px;
+  width: 80px;
   height: 4px;
   background: var(--gray30);
   display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
