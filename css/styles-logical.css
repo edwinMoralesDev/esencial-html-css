@@ -1,57 +1,110 @@
 :root {
-  --gray30: #212121;
-  --gray20: #212429;
-  --gray10: #616161;
+  --white30: white;
+  --white20: #A5A3A5;
+  --white10: #616161;
 }
 body {
-  color: var(--gray30);
-  font-family: 'Roboto', sans-serif;
+  color: var(--white30);
+  background: #251F24;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
 }
 header {
   font-size: .875rem;
-  color: var(--gray20);
+  color: var(--white);
+}
+header li {
+  color: var(--white20);
 }
 header a {
-  color: var(--gray10);
+  color: var(--white20);
   text-decoration: none;
 }
 header a:hover {
-  color: var(--gray10);
+  color: var(--white10);
 }
 nav details summary {
   font-weight: bold;
 }
 h1 {
   font-size: 3.75rem;
+  font-weight: bold;
+  margin-block-start: 64px;
+  margin-block-end: 16px;
 }
 h2 {
   font-size: 2rem;
+  font-weight: bold;
+  margin-block: 40px;
 }
 h3 {
   font-size: 1.5rem;
+  font-weight: 600;
+  margin-block: 16px;
+}
+hr {
+  margin-block: 40px;
+  border-color: rgba(97, 97, 97, 0.2);
 }
 pre {
-  background: #FEC62E;
+  background: var(--white10);
+  padding: 40px;
+  overflow: auto;
+  border-radius: 8px;
+}
+p {
+  color: (--white20);
+
 }
 .hero {
-  background: linear-gradient(to top, rgba(255, 255, 255, .3), transparent ), url(../images/pattern.png);
+  background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
   height: 350px;
 }
 .section-content {
   counter-reset: titleList;
 }
+.section-content img {
+  margin-block-start: 40px;
+  display: block;
+  max-inline-size: 100%;
+}
 .section-content h3 {
   counter-increment: titleList;
 }
 .section-content h3::before {
-  content: counter(titleList, decimal);
+  content: counter(titleList, decimal)'. ';
 
 }
-.section-content h3::after {
+/* .section-content h3::after {
   content: '';
   width: 32px;
   height: 4px;
-  background: var(--gray30);
+  background: var(--white30);
   display: inline-block;
+} */
+blockquote {
+  margin-block-start: 80px;
+  margin-block-end: 64px;
+  background: var(--white10);
+  border-radius: 8px;
+  line-height: 32px;
+  font-size: 24px;
+  padding: 24px;
+}
+blockquote p {
+  color: var(--white30);
 }
 
+.main hr {
+  display: none;
+}
+.main {
+
+}
+.wrapper {
+  max-inline-size: 902px;
+  margin: auto;
+}
+.main-content {
+  padding-inline: 16px;
+}
